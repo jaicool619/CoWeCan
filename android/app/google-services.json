@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "820406330347",
+    "project_id": "btcs-attendance",
+    "storage_bucket": "btcs-attendance.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820406330347:android:caf832e24881eebc466fae",
+        "android_client_info": {
+          "package_name": "com.jd.attendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820406330347-cp4l3llglfdt383cbngi32omhapcjcfm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA77_wrxxQCSLXc8T0xyy7VUB2Cca-CfZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820406330347-cp4l3llglfdt383cbngi32omhapcjcfm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
