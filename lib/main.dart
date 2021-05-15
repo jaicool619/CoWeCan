@@ -1,22 +1,12 @@
-import 'package:attendance/excersie/exercise.dart';
-import 'package:attendance/excersie/exerciseNyoga.dart';
-import 'package:attendance/live/screens/tracker.dart';
-import 'package:attendance/screens/aunthenticate/authenticate.dart';
-import 'package:attendance/screens/aunthenticate/signin.dart';
-import 'package:attendance/screens/home/sleep.dart';
-import 'package:attendance/screens/home/splash.dart';
-
-
-import 'package:attendance/screens/wrapper.dart';
-import 'package:attendance/services/auth.dart';
-
-import 'package:attendance/widgets/constant.dart';
-import 'package:attendance/widgets/mainly.dart';
+import 'package:CoWeCan/models/user.dart';
+import 'package:CoWeCan/screens/home/splash.dart';
+import 'package:CoWeCan/services/auth.dart';
+import 'package:CoWeCan/widgets/constant.dart';
+import 'package:CoWeCan/widgets/nav.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:attendance/models/user.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -33,7 +23,7 @@ class MyApp extends StatelessWidget {
           
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
-      title: 'Foster',
+      title: 'CoWeCare',
       theme: ThemeData(
         scaffoldBackgroundColor: kBackgroundColor,
           fontFamily: "Poppins",
@@ -43,7 +33,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color.fromRGBO(209, 216, 224, 1.0),
         
       ),
-        home: HomeScreen(),
+        home: Nav(),
       ),
     );
   }

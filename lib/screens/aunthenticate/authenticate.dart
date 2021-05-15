@@ -1,5 +1,6 @@
-import 'package:attendance/screens/aunthenticate/register.dart';
-import 'package:attendance/screens/aunthenticate/signin.dart';
+
+import 'package:CoWeCan/screens/aunthenticate/register.dart';
+import 'package:CoWeCan/screens/aunthenticate/signin.dart';
 import 'package:flutter/material.dart';
 
 class Authenticate extends StatefulWidget {

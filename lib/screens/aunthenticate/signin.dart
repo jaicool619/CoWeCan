@@ -1,6 +1,6 @@
-import 'package:attendance/services/auth.dart';
-import 'package:attendance/shared/constants.dart';
-import 'package:attendance/shared/loding.dart';
+import 'package:CoWeCan/services/auth.dart';
+import 'package:CoWeCan/shared/loding.dart';
+
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
