@@ -1,4 +1,4 @@
-# attendance
+# CoWeCare
 
 A new Flutter project.
 
