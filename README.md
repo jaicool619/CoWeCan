@@ -1,6 +1,6 @@
-# attendance
+# CoWeCan
 
-A new Flutter project.
+A Flutter App which focusses on keeping fit and helping People who are covid positive.
 
 ## Getting Started
 
