@@ -1,3 +1,5 @@
+
+import 'package:CoWeCan/screens/home/home.dart';
 import 'package:flutter/material.dart';
 class New extends StatefulWidget {
   @override
@@ -11,7 +13,7 @@ class _NewState extends State<New> {
       fit: StackFit.expand,
       children: [
         Image.asset(
-          'assets/donor.gif',
+          'assets/images/donor.gif',
          
           fit: BoxFit.cover,
         ),
@@ -25,7 +27,10 @@ class _NewState extends State<New> {
                 child: Text('GOT IT', style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold, letterSpacing: 1.5),),  
                 color: Colors.yellow,  
                 textColor: Colors.black.withOpacity(0.7)  ,
-                onPressed: () {},  
+                onPressed: () {Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => Home()),
+  );},  
               ),  
         
         ))],);
