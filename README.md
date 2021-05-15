@@ -1,4 +1,4 @@
-# CoWeCare
+# CoWeCan
 
 A new Flutter project.
 
