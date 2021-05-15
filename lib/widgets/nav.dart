@@ -1,3 +1,4 @@
+import 'package:CoWeCan/donor/banner.dart';
 import 'package:CoWeCan/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -10,7 +11,7 @@ class Nav extends StatefulWidget {
 
 class _NavState extends State<Nav> {
   int _selectedIndex = 0;
-   List<Widget> _pages = [Home(), Home(), Home(),Home()];
+   List<Widget> _pages = [New(), Home(), Home(),Home()];
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -34,22 +35,23 @@ class _NavState extends State<Nav> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-     
-      body: _pages[_selectedIndex],
-      
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 20,
-              color: Colors.black.withOpacity(.1),
-            )
-          ],
-        ),
-        child: SafeArea(
+    return Container(width: 40,
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+       
+        body: _pages[_selectedIndex],
+        
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 20,
+                color: Colors.black.withOpacity(.1),
+              )
+            ],
+          ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
