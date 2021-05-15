@@ -1,5 +1,6 @@
 
-import 'package:attendance/widgets/constant.dart';
+import 'package:CoWeCan/widgets/constant.dart';
+
 import 'package:flutter/material.dart';
 
 class Counter extends StatelessWidget {

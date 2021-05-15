@@ -1,7 +1,7 @@
-import 'package:attendance/widgets/constant.dart';
-import 'package:attendance/widgets/info_screen.dart';
 
 
+import 'package:CoWeCan/widgets/constant.dart';
+import 'package:CoWeCan/widgets/info_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

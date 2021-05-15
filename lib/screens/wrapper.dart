@@ -1,7 +1,7 @@
-import 'package:attendance/models/user.dart';
-import 'package:attendance/screens/aunthenticate/authenticate.dart';
-import 'package:attendance/screens/home/home.dart';
-import 'package:attendance/widgets/nav.dart';
+import 'package:CoWeCan/models/user.dart';
+import 'package:CoWeCan/screens/aunthenticate/authenticate.dart';
+import 'package:CoWeCan/widgets/nav.dart';
+
 
 //import 'package:attendance/screens/home/splash1.dart';
 

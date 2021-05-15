@@ -1,7 +1,9 @@
-import 'package:attendance/services/database.dart';
+
+import 'package:CoWeCan/models/user.dart';
+import 'package:CoWeCan/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:attendance/models/user.dart';
+
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 

@@ -1,5 +1,6 @@
-import 'package:attendance/models/brew.dart';
-import 'package:attendance/models/user.dart';
+import 'package:CoWeCan/models/brew.dart';
+import 'package:CoWeCan/models/user.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 class DatabaseService{
   final String uid;
