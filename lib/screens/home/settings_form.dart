@@ -16,14 +16,14 @@ class _SettingFormState extends State<SettingForm> {
   
 
   final _formkey=GlobalKey<FormState>();
-  final List<String> sugars=['0','1','2','3','4'];
+  final List<String> sugars=['A+','A-','B+','B-','O+','O-','AB+','AB-'];
   String _currentName;
   String _currentSugars;
   String _currentState;
 
   
   int _currentStrength;
-  String chai='Chai';
+  String chai='Male';
   String selected = "first";
 String get selected1 => selected;
   Widget build(BuildContext context) {
@@ -54,28 +54,28 @@ String get selected1 => selected;
           onTap: () {
             setState(() {
               selected = 'first';
-               chai="Chai";
+               chai="male";
             });
           },
           child: Container(
             height: 30,
             width: 50,
             color: selected == 'first' ? Colors.blue : Colors.transparent,
-            child: Center(child: Text("Chai",textScaleFactor: 1.2,)),
+            child: Center(child: Text("male",textScaleFactor: 1.2,)),
           ),
         ),
         InkWell(
           onTap: () {
             setState(() {
               selected = 'second';
-              chai="Coffee";
+              chai="female";
             });
           },
           child: Container(
             height: 30,
             width: 50,
             color: selected == 'second' ? Colors.blue : Colors.transparent,
-            child: Center(child: Text("Coffee",textScaleFactor: 1.2,)),
+            child: Center(child: Text("female",textScaleFactor: 1.2,)),
           ),
         ),
       ],),

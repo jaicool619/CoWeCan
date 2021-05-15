@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
     child: Icon(
       Icons.arrow_back, ) ),
           title: Center(child: Text("Plasma Donor")),
-          backgroundColor: Colors.brown[400],
+          backgroundColor: Colors.yellow[400],
           elevation: 0.0,
           actions: [
             FlatButton.icon(
@@ -50,19 +50,20 @@ class _HomeState extends State<Home> {
               onPressed: ()async{
                 await _auth.signOut();
               },),
-            FlatButton.icon(onPressed:(){
-                _showSettingsPanel();
-            } , label: Text("Update"),
-            icon: Icon(Icons.settings))
+            // FlatButton.icon(onPressed:(){
+            //     _showSettingsPanel();
+            // } , label: Text("Update"),
+            // icon: Icon(Icons.settings))
           ],
         ),
       body: Container(decoration: BoxDecoration(image:DecorationImage(
-            image: AssetImage("assets/images/coffeec.png"),
+            image: AssetImage("assets/images/dono.png"),
             fit: BoxFit.cover,
           ),
         ),
         child: BrewList()),
-      ),
+        floatingActionButton: FloatingActionButton( child:Icon(Icons.add), backgroundColor: Colors.yellow, onPressed: (){_showSettingsPanel();},),
+       ),
     );
   }
 }
