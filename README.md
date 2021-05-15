@@ -1,4 +1,4 @@
-# CoWeCan
+# CoWeCare
 
 A Flutter App which focusses on keeping fit and helping People who are covid positive.
 
