@@ -18,141 +18,147 @@ class CountryStatistics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
+    return SingleChildScrollView(
+          child: Column(
+        children: <Widget>[
 
-        buildCard(
-          "CONFIRMED",
-          summaryList[summaryList.length - 1].confirmed,
-          kConfirmedColor,
-          "ACTIVE",
-          summaryList[summaryList.length - 1].active,
-          kActiveColor,
-        ),
-      
-        buildCard(
-          "RECOVERED",
-          summaryList[summaryList.length - 1].recovered,
-          kRecoveredColor,
-          "DEATH",
-          summaryList[summaryList.length - 1].death,
-          kDeathColor,
-        ),
+          buildCard(
+            "CONFIRMED",
+            summaryList[summaryList.length - 1].confirmed,
+            kConfirmedColor,
+            "ACTIVE",
+            summaryList[summaryList.length - 1].active,
+            kActiveColor,
+          ),
+        
+          buildCard(
+            "RECOVERED",
+            summaryList[summaryList.length - 1].recovered,
+            kRecoveredColor,
+            "DEATH",
+            summaryList[summaryList.length - 1].death,
+            kDeathColor,
+          ),
 
-        buildCardChart(summaryList),
+          buildCardChart(summaryList),
 
-      ],
+        ],
+      ),
     );
   }
 
   Widget buildCard(String leftTitle, int leftValue, Color leftColor, String rightTitle, int rightValue, Color rightColor){
-    return Card(margin: EdgeInsets.only(right:1,left:1,top: 8,bottom: 8),
-      elevation: 1.5,
-      color: Colors.white.withOpacity(0.7),
-      shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(12.0),),
-      child: Container(
-        height: 100,
-       decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
-       width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
+    return SingleChildScrollView(
+          child: Card(margin: EdgeInsets.only(right:1,left:1,top: 1,bottom: 0),
+        elevation: 1.5,
+        color: Colors.white.withOpacity(0.7),
+        shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12.0),),
+        child: Container(
+          height: 100,
+         decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
+         width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
 
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+              Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
 
-                Text(
-                  leftTitle,
-                  style: TextStyle(
-                    color: Colors.black,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+                    Text(
+                      leftTitle,
+                      style: TextStyle(
+                        color: Colors.black,
+                        letterSpacing: 1.5,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                    ),
+
+                    Expanded(
+                      child: Container(),
+                    ),
+
+                    Text(
+                      "Total",
+                      style: TextStyle(
+                        color: leftColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
+
+                    Text(
+                      formatter.format(leftValue),
+                      style: TextStyle(
+                        color: leftColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 28,
+                      ),
+                    ),
+                  ],
+                ),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+
+                  Text(
+                    rightTitle,
+                    style: TextStyle(
+                      color: Colors.black,
+                      letterSpacing: 1.5,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
                   ),
-                ),
 
-                Expanded(
-                  child: Container(),
-                ),
-
-                Text(
-                  "Total",
-                  style: TextStyle(
-                    color: leftColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12,
+                  Expanded(
+                    child: Container(),
                   ),
-                ),
 
-                Text(
-                  formatter.format(leftValue),
-                  style: TextStyle(
-                    color: leftColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 28,
+                   Text(
+                    "Total",
+                    style: TextStyle(
+                      color: rightColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12,
+                    ),
                   ),
-                ),
-              ],
-            ),
 
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-
-                Text(
-                  rightTitle,
-                  style: TextStyle(
-                    color: Colors.black,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+                  Text(
+                     formatter.format(rightValue),
+                    style: TextStyle(
+                      color: rightColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28,
+                    ),
                   ),
-                ),
+                ],
+              ),
 
-                Expanded(
-                  child: Container(),
-                ),
-
-                 Text(
-                  "Total",
-                  style: TextStyle(
-                    color: rightColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12,
-                  ),
-                ),
-
-                Text(
-                   formatter.format(rightValue),
-                  style: TextStyle(
-                    color: rightColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 28,
-                  ),
-                ),
-              ],
-            ),
-
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 
   Widget buildCardChart(List<CountrySummaryModel> summaryList){
-    return Card(color: Colors.white.withOpacity(0.7),
-       shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(12.0),),
-      elevation: 1,
-      child: Container(
-        height: 190,
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        child: Chart(
-          _createData(summaryList),
-          animate: false,
+    return SingleChildScrollView(
+          child: Card(color: Colors.white.withOpacity(0.7),
+         shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12.0),),
+        elevation: 1,
+        child: Container(
+          height: 190,
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: Chart(
+            _createData(summaryList),
+            animate: false,
+          ),
         ),
       ),
     );
