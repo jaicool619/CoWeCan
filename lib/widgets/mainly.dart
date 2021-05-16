@@ -1,7 +1,13 @@
 
+import 'package:CoWeCan/screens/wrapper.dart';
+import 'package:CoWeCan/services/auth.dart';
 import 'package:CoWeCan/widgets/constant.dart';
 import 'package:CoWeCan/widgets/counter.dart';
+import 'package:CoWeCan/widgets/faq.dart';
+import 'package:CoWeCan/widgets/info_screen.dart';
 import 'package:CoWeCan/widgets/my_header.dart';
+import 'package:CoWeCan/widgets/nav.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -33,170 +39,148 @@ class _HomeScreenState extends State<HomeScreen> {
       offset = (controller.hasClients) ? controller.offset : 0;
     });
   }
-
+final AuthService _auth =AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: SingleChildScrollView(
         controller: controller,
         child: Column(
-          children: <Widget>[
-            MyHeader(
-              image: "assets/icons/Drcorona.svg",
-              textTop: "All you need",
-              textBottom: "is stay at home.",
-              offset: offset,
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(25),
-                border: Border.all(
-                  color: Color(0xFFE5E5E5),
+         
+            children: <Widget>[ Container(height: 22, color:  Color(0xff1C46AF),),
+              Container(color: Color(0xff1C46AF),
+                child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [ Text('Logout',style: TextStyle(color: Colors.white.withOpacity(0.8),fontSize: 14),),SizedBox(width: 5,) ,GestureDetector(onTap: ()async{
+                await _auth.signOut();
+                Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => Wrapper()),
+  );},child: Icon(Icons.logout_rounded,size: 40,color: Colors.white)),
+        ],),
+              ),
+             
+              MyHeader(
+                image: "assets/icons/Drcorona.svg",
+                textTop: "CoWeCan!",
+                textBottom: "All you need \nis stay at home.",
+                offset: offset,
+              ),InkWell(onTap: (){Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => InfoScreen()),
+  );},
+              child:Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                height: 60,
+                width: double.infinity,
+                decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(25),
+        border: Border.all(
+          color: Color(0xFFE5E5E5),
+        ),
+                ),
+                child: Center(child: Text("Symtoms and Prevention",style: TextStyle(fontSize: 20,))),
+              ),),
+              SizedBox(height: 20),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Become a Plasma Donor\n",
+                      style: kTitleTextstyle,
+                    ),
+                    
+                  ],
                 ),
               ),
-              child: Row(
-                children: <Widget>[
-                  SvgPicture.asset("assets/icons/maps-and-flags.svg"),
-                  SizedBox(width: 20),
-                  Expanded(
-                    child: DropdownButton(
-                      isExpanded: true,
-                      underline: SizedBox(),
-                      icon: SvgPicture.asset("assets/icons/dropdown.svg"),
-                      value: "Indonesia",
-                      items: [
-                        'Indonesia',
-                        'Bangladesh',
-                        'United States',
-                        'Japan'
-                      ].map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: (value) {},
-                    ),
-                  ),
-                ],
-              ),
+              Spacer(),
+              Icon(Icons.bloodtype,color: Colors.red,)
+              
+            ],
+          ),
+          SizedBox(height: 20),
+          Container(
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 4),
+                  blurRadius: 30,
+                  color: kShadowColor,
+                ),
+              ],
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: "Case Update\n",
-                              style: kTitleTextstyle,
-                            ),
-                            TextSpan(
-                              text: "Newest update March 28",
-                              style: TextStyle(
-                                color: kTextLightColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Spacer(),
-                      Text(
-                        "See details",
-                        style: TextStyle(
-                          color: kPrimaryColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Container(
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          offset: Offset(0, 4),
-                          blurRadius: 30,
-                          color: kShadowColor,
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Counter(
-                          color: kInfectedColor,
-                          number: 1046,
-                          title: "Infected",
-                        ),
-                        Counter(
-                          color: kDeathColor,
-                          number: 87,
-                          title: "Deaths",
-                        ),
-                        Counter(
-                          color: kRecovercolor,
-                          number: 46,
-                          title: "Recovered",
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "Spread of Virus",
-                        style: kTitleTextstyle,
-                      ),
-                      Text(
-                        "See details",
-                        style: TextStyle(
-                          color: kPrimaryColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 20),
-                    padding: EdgeInsets.all(20),
-                    height: 178,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          offset: Offset(0, 10),
-                          blurRadius: 30,
-                          color: kShadowColor,
-                        ),
-                      ],
-                    ),
-                    child: Image.asset(
-                      "assets/images/map.png",
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ],
+           child:Text('Through a blood donation process, this antibody-rich plasma can be collected from a recovered person, then transfused to a sick patient who is still fighting the virus. This provides a boost to the immune system of the sick patient and may help speed the recovery process.')
+          ),
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                "Keep yourself Healthy",
+                style: kTitleTextstyle,
               ),
+              Spacer(),
+              Icon(Icons.line_weight,color: Colors.orange,)
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 20),
+            padding: EdgeInsets.all(20),
+            height: 178,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 10),
+                  blurRadius: 30,
+                  color: kShadowColor,
+                ),
+              ],
             ),
-          ],
+            child: Text('Stay fit to fight the virus, say medics.\n Take exercise unless you are unwell with the virus: ideally a brisk walk, cycle or jog. Strengthening and balance exercises are also recommended. App consist of proper yoga and exercise track.')
+            ),
+          
+          SizedBox(height:20),
+           InkWell(onTap: (){Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => FaqPage()),
+  );},
+                                child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                height: 60,
+                width: double.infinity,
+                decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(25),
+        border: Border.all(
+          color: Color(0xFFE5E5E5),
         ),
+                ),
+                child: Center(child: Text("FAQs",style: TextStyle(fontSize: 20,))),),
+           ),
+                SizedBox(height:20)
+              
+             
+        ],
+                ),
+              ),
+            ],
+          ),
       ),
     );
   }

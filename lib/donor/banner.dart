@@ -10,18 +10,15 @@ class _NewState extends State<New> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      fit: StackFit.expand,
+      
       children: [
-        Image.asset(
-          'assets/images/donor.gif',
-         
-          fit: BoxFit.cover,
-        ),
+        
+        
         Positioned(
           top: 320,
           left: 90,
           right: 90,
-          child: Container(  
+          child: Container(  color: Colors.transparent,
               margin: EdgeInsets.all(25),  
               child: FlatButton(  
                 child: Text('GOT IT', style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold, letterSpacing: 1.5),),  

@@ -30,8 +30,10 @@ class BrewTile extends StatelessWidget {
               image: DecorationImage(
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.1), BlendMode.darken),
-                  image: AssetImage(
-                    'assets/images/stud.png',
+                  image: brew.state=='Female'?AssetImage(
+                    'assets/images/female.png',
+                  ):AssetImage(
+                    'assets/images/male.png',
                   ),
 
                   //colorFilter: ColorFilter.mode(Colors.white, BlendMode.darken),
@@ -41,10 +43,11 @@ class BrewTile extends StatelessWidget {
         
                       
                       title:Text(brew.name,style: TextStyle(fontSize: 20),) ,
-                      subtitle: Text(brew.state,style: TextStyle(fontSize: 14)),
-                      trailing: Text(brew.sugars,style: TextStyle(fontSize: 14)),),
+                      subtitle: Text(brew.ph,style: TextStyle(fontSize: 14)),
+                      trailing: Text(brew.sugars,style: TextStyle(fontSize: 16)),),
                       ListTile(
                         leading: Icon(Icons.location_on),
+                        title: Text(brew.add,style: TextStyle(fontSize: 14),),
                       )])))
 
     // return Padding(padding: EdgeInsets.only(top:8),

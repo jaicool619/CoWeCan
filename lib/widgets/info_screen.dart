@@ -1,5 +1,6 @@
 import 'package:CoWeCan/widgets/constant.dart';
 import 'package:CoWeCan/widgets/my_header.dart';
+import 'package:CoWeCan/widgets/nav.dart';
 
 
 import 'package:flutter/material.dart';
@@ -37,6 +38,16 @@ class _InfoScreenState extends State<InfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue[900],
+        leading: GestureDetector(
+    onTap: () { Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => Nav()),
+  ); },
+    child: Icon(
+      Icons.arrow_back, ) ),),
+
       body: SingleChildScrollView(
         controller: controller,
         child: Column(

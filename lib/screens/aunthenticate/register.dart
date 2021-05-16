@@ -26,7 +26,7 @@ class _RegisterState extends State<Register> {
       fit: StackFit.expand,
       children: [
         Image.asset(
-          'assets/images/coffeegif1.gif',
+          'assets/images/register.png',
          
           colorBlendMode: BlendMode.darken,
           fit: BoxFit.cover,
@@ -34,7 +34,7 @@ class _RegisterState extends State<Register> {
        
         Padding(
           padding:
-              const EdgeInsets.only(top: 200, bottom: 12, left: 12, right: 12),
+              const EdgeInsets.only(top: 150, bottom: 12, left: 12, right: 12),
           child: SingleChildScrollView(
             child: Card(
               //shadowColor: Colors.white.withOpacity(0.3),
@@ -62,8 +62,8 @@ class _RegisterState extends State<Register> {
                                     Icons.supervised_user_circle_rounded,
                                     color: Colors.black),
                                 fillColor: Colors.black,
-                                hintText: '180XXX',
-                                labelText: "Teacher ID / Enrollment No",
+                                hintText: 'JaiXXX',
+                                labelText: "Enter your Name",
                                 labelStyle: TextStyle(
                                   letterSpacing: 1.5,
                                 ),
@@ -185,7 +185,7 @@ class _RegisterState extends State<Register> {
                                 textAlign: TextAlign.right)),
                       ),
                    ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 17),
                     InkWell(
                       onTap: ()async{
              if(_formkey.currentState.validate()){

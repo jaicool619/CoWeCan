@@ -1,11 +1,14 @@
 
 import 'package:CoWeCan/donor/banner.dart';
 import 'package:CoWeCan/models/brew.dart';
+import 'package:CoWeCan/screens/aunthenticate/authenticate.dart';
 import 'package:CoWeCan/screens/home/brew_list.dart';
 import 'package:CoWeCan/screens/home/settings_form.dart';
+import 'package:CoWeCan/screens/wrapper.dart';
 import 'package:CoWeCan/services/auth.dart';
 import 'package:CoWeCan/services/database.dart';
 import 'package:CoWeCan/widgets/nav.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -33,15 +36,16 @@ class _HomeState extends State<Home> {
       value:DatabaseService().brews,
           child: Scaffold(
         backgroundColor: Colors.brown[50],
-        appBar: AppBar(leading: GestureDetector(
+        appBar: AppBar(
+          leading: GestureDetector(
     onTap: () { Navigator.pushReplacement(
     context,
     MaterialPageRoute(builder: (context) => Nav()),
   ); },
     child: Icon(
-      Icons.arrow_back, ) ),
+      Icons.home, ) ),
           title: Center(child: Text("Plasma Donor")),
-          backgroundColor: Colors.yellow[400],
+          backgroundColor: Colors.orange[900],
           elevation: 0.0,
           actions: [
             FlatButton.icon(
@@ -49,6 +53,10 @@ class _HomeState extends State<Home> {
               label: Text("Logout"),
               onPressed: ()async{
                 await _auth.signOut();
+                Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => Wrapper()),
+  );
               },),
             // FlatButton.icon(onPressed:(){
             //     _showSettingsPanel();
