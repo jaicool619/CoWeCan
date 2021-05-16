@@ -23,11 +23,11 @@ class _YogaExerciseState extends State<YogaExercise> {
       child: Container(
             height:height*0.9,
               // height: 100.0,
-              decoration: BoxDecoration(    image: DecorationImage(
-            image: AssetImage('assets/images/breathe.gif'),
-            fit: BoxFit.cover
-                   )
-                      ),
+            //   decoration: BoxDecoration(    image: DecorationImage(
+            // image: AssetImage('assets/images/breathe.gif'),
+            // fit: BoxFit.cover
+            //        )
+            //           ),
 
         child:orientation==Orientation.landscape? Row(children: <Widget>[
           GestureDetector(

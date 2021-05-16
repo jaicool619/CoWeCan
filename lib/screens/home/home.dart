@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
     MaterialPageRoute(builder: (context) => Nav()),
   ); },
     child: Icon(
-      Icons.arrow_back, ) ),
+      Icons.home, ) ),
           title: Center(child: Text("Plasma Donor")),
           backgroundColor: Colors.yellow[400],
           elevation: 0.0,

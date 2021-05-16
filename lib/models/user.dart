@@ -10,11 +10,13 @@ class UserM {
 class UserData{
   final String uid;
   final String name;
-  final String sugars;
-  final String state;
+  final String sugars;//blood
+  final String state;//gen
 
-  final int strength;
+  final String ph;
+  final String add;
 
 
-  UserData( {this.uid,this.name,this.sugars,this.state,this.strength});
+
+  UserData( {this.uid,this.name,this.sugars,this.state,this.ph,this.add});
 }

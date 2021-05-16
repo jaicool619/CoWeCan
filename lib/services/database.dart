@@ -7,12 +7,13 @@ class DatabaseService{
   DatabaseService({this.uid});
   final CollectionReference brewCollection=Firestore.instance.collection('brews');
 
-Future updateUserData(String sugars,String state,String name,int strength)async{
+Future updateUserData(String sugars,String state,String name,String ph,String add)async{
   return await brewCollection.document(uid).setData({
-    'sugars':sugars,
-    'state':state,
+    'bloodg':sugars,
+    'gen':state,
     'name':name,
-    'strength':strength,
+    'ph':ph,
+    'add':add,
   });
 }
 //brew list from snapshot
@@ -21,9 +22,10 @@ List<Brew>_brewListFromSnapshot(QuerySnapshot snapshot){
   return snapshot.documents.map((doc){
     return Brew(
     name: doc.data()['name']??'',
-    sugars: doc.data()['sugars']?? 0,
-    state: doc.data()['state']?? 0,
-    strength: doc.data()['strength']??'0',);
+    sugars: doc.data()['bloodg']??'',
+    state: doc.data()['gen']?? '',
+    ph: doc.data()['ph']??'+91',
+    add:doc.data()['add']??'');
   }).toList();
 }
 //userData from snapshot
@@ -33,7 +35,8 @@ UserData _userDataFromSNapshot(DocumentSnapshot snapshot){
     name:snapshot.data()['name'],
     sugars:snapshot.data()['sugars'],
     state:snapshot.data()['state'],
-    strength:snapshot.data()['strength'],
+    ph:snapshot.data()['ph'],
+    add:snapshot.data()['add'],
 
   );
 }

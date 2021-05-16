@@ -88,6 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Spacer(),
+                      Icon(Icons.bloodtype,color: Colors.red,)
                       
                     ],
                   ),
@@ -105,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                   
+                   child:Text('Through a blood donation process, this antibody-rich plasma can be collected from a recovered person, then transfused to a sick patient who is still fighting the virus. This provides a boost to the immune system of the sick patient and may help speed the recovery process.')
                   ),
                   SizedBox(height: 20),
                   Row(
@@ -115,7 +116,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         "Keep yourself Healthy",
                         style: kTitleTextstyle,
                       ),
-                      
+                      Spacer(),
+                      Icon(Icons.line_weight,color: Colors.orange,)
                     ],
                   ),
                   Container(
@@ -134,11 +136,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    child: Image.asset(
-                      "assets/images/map.png",
-                      fit: BoxFit.contain,
+                    child: Text('Stay fit to fight the virus, say medics.\n Take exercise unless you are unwell with the virus: ideally a brisk walk, cycle or jog. Strengthening and balance exercises are also recommended. App consist of proper yoga and exercise track.')
                     ),
-                  ),
+                  
                   SizedBox(height:20),
                    InkWell(onTap: (){Navigator.pushReplacement(
     context,

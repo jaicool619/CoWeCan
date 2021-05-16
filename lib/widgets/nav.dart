@@ -14,7 +14,7 @@ class Nav extends StatefulWidget {
 
 class _NavState extends State<Nav> {
   int _selectedIndex = 0;
-   List<Widget> _pages = [New(), Tracker(), YogaExercise(),HomeScreen()];
+   List<Widget> _pages = [HomeScreen(), New(), YogaExercise(),Tracker()];
    int f=0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
@@ -24,15 +24,15 @@ class _NavState extends State<Nav> {
       style: optionStyle,
     ),
     Text(
-      'Likes',
+      'Donor',
       style: optionStyle,
     ),
     Text(
-      'Search',
+      'Fitness',
       style: optionStyle,
     ),
     Text(
-      'Profile',
+      'Stats',
       style: optionStyle,
     ),
   ];
@@ -43,7 +43,7 @@ class _NavState extends State<Nav> {
       decoration: BoxDecoration(
          
         image: DecorationImage(
-      image:f==0? AssetImage("assets/images/donor.gif"):AssetImage("assets/images/walking.gif"),
+      image:f==0? AssetImage("assets/images/bg.png"):f==1?AssetImage('assets/images/donor.gif'):f==2?AssetImage('assets/images/breathe.gif'):AssetImage("assets/images/walking.gif"),
       fit: BoxFit.cover,
     ),
         borderRadius: BorderRadius.circular(20)),
@@ -78,20 +78,25 @@ class _NavState extends State<Nav> {
               tabs: [
                 GButton(
                   icon: LineIcons.home,
-                  backgroundColor: Colors.yellow,
+                  backgroundColor: Colors.blue,
                   text: 'Home',
                 ),
                 GButton(
-                  icon: LineIcons.dumbbell,
-                  text: 'Likes',
+                  icon: LineIcons.heartAlt,
+                  text: 'Donor',
+                  padding: EdgeInsets.all(8),
+                  backgroundColor: Colors.red,
                 ),
                 GButton(
-                  icon: LineIcons.heart,
-                  text: 'Search',
+                  icon: LineIcons.dumbbell,
+                  text: 'Fitness',
+                  backgroundColor: Colors.yellow,
                 ),
                 GButton(
                   icon: LineIcons.database,
-                  text: 'Profile',
+                  backgroundColor: Colors.green,
+
+                  text: 'Stats',
                 ),
               ],
               selectedIndex: _selectedIndex,
