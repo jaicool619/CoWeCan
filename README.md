@@ -1,6 +1,6 @@
 # CoWeCan
 
-A Flutter App which focusses on keeping fit and helping People who are covid positive.
+A Flutter app that focuses on keeping fit and helping People who are covid positive and need plasma.
 
 ## Getting Started
 
