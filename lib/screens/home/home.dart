@@ -36,7 +36,8 @@ class _HomeState extends State<Home> {
       value:DatabaseService().brews,
           child: Scaffold(
         backgroundColor: Colors.brown[50],
-        appBar: AppBar(leading: GestureDetector(
+        appBar: AppBar(
+          leading: GestureDetector(
     onTap: () { Navigator.pushReplacement(
     context,
     MaterialPageRoute(builder: (context) => Nav()),
@@ -44,7 +45,7 @@ class _HomeState extends State<Home> {
     child: Icon(
       Icons.home, ) ),
           title: Center(child: Text("Plasma Donor")),
-          backgroundColor: Colors.yellow[400],
+          backgroundColor: Colors.orange[900],
           elevation: 0.0,
           actions: [
             FlatButton.icon(
