@@ -1,6 +1,7 @@
-import 'package:attendance/excersie/exercise.dart';
-import 'package:attendance/screens/home/exerciseList.dart';
-import 'package:attendance/screens/home/yogaList.dart';
+
+import 'package:CoWeCan/excersie/exercise.dart';
+import 'package:CoWeCan/screens/home/exerciseList.dart';
+import 'package:CoWeCan/screens/home/yogaList.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

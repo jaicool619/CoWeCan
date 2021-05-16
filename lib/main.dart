@@ -3,6 +3,7 @@ import 'package:CoWeCan/screens/home/splash.dart';
 import 'package:CoWeCan/services/auth.dart';
 import 'package:CoWeCan/widgets/constant.dart';
 import 'package:CoWeCan/widgets/nav.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color.fromRGBO(209, 216, 224, 1.0),
         
       ),
-        home: Nav(),
+        home: Spalsh(),
       ),
     );
   }

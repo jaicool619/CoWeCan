@@ -55,7 +55,7 @@ void initState() {
       backgroundColor: Color(0xFFF8F0EE),
       body: Center(
         child: Container(decoration: BoxDecoration(color:Color(0xFFF8F0EE) ),
-          child: Image.asset('assets/images/coffee.gif',fit: BoxFit.fitHeight,),
+          child: Image.asset('assets/images/splash.gif',fit: BoxFit.fitHeight,),
         ),
       ),
     );

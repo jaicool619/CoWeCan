@@ -23,14 +23,7 @@ class _TrackerState extends State<Tracker> {
 
     Size size = MediaQuery.of(context).size;
 
-    return Container(
-  decoration: BoxDecoration(
-    image: DecorationImage(
-      image: AssetImage("assets/images/walking.gif"),
-      fit: BoxFit.cover,
-    ),
-  ),
-    child:Scaffold(
+    return Scaffold(
       
       backgroundColor: Colors.transparent,
       resizeToAvoidBottomInset: false,
@@ -104,6 +97,6 @@ class _TrackerState extends State<Tracker> {
           
         ],
       ),
-    ));
+    );
   }
 }

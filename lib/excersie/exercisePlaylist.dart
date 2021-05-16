@@ -1,6 +1,7 @@
-import 'package:attendance/excersie/exerciseCard.dart';
-import 'package:attendance/excersie/exerciseYoutube.dart';
-import 'package:attendance/screens/home/exercise_model.dart';
+import 'package:CoWeCan/excersie/exerciseCard.dart';
+import 'package:CoWeCan/excersie/exerciseYoutube.dart';
+import 'package:CoWeCan/screens/home/exercise_model.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:page_transition/page_transition.dart';

@@ -1,6 +1,7 @@
-import 'package:attendance/excersie/exercisePlaylist.dart';
-import 'package:attendance/excersie/exercisePlaylistCard.dart';
-import 'package:attendance/screens/home/exercise_model.dart';
+
+import 'package:CoWeCan/excersie/exercisePlaylist.dart';
+import 'package:CoWeCan/excersie/exercisePlaylistCard.dart';
+import 'package:CoWeCan/screens/home/exercise_model.dart';
 import 'package:flutter/material.dart';
 
 

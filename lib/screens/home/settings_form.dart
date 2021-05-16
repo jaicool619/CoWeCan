@@ -16,7 +16,7 @@ class _SettingFormState extends State<SettingForm> {
   
 
   final _formkey=GlobalKey<FormState>();
-  final List<String> sugars=['A+','A-','B+','B-','O+','O-','AB+','AB-'];
+  final List<String> sugars=['0','1','2','3','4'];
   String _currentName;
   String _currentSugars;
   String _currentState;

@@ -3,6 +3,7 @@ import 'package:CoWeCan/screens/aunthenticate/authenticate.dart';
 import 'package:CoWeCan/widgets/nav.dart';
 
 
+
 //import 'package:attendance/screens/home/splash1.dart';
 
 import 'package:flutter/material.dart';

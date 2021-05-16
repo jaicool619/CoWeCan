@@ -1,4 +1,5 @@
-import 'package:attendance/live/utils/constants.dart';
+
+import 'package:CoWeCan/live/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 

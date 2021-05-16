@@ -1,7 +1,11 @@
 
 import 'package:CoWeCan/widgets/constant.dart';
 import 'package:CoWeCan/widgets/counter.dart';
+import 'package:CoWeCan/widgets/faq.dart';
+import 'package:CoWeCan/widgets/info_screen.dart';
 import 'package:CoWeCan/widgets/my_header.dart';
+import 'package:CoWeCan/widgets/nav.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -37,17 +41,21 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: SingleChildScrollView(
         controller: controller,
         child: Column(
           children: <Widget>[
             MyHeader(
               image: "assets/icons/Drcorona.svg",
-              textTop: "All you need",
-              textBottom: "is stay at home.",
+              textTop: "CoWeCan!",
+              textBottom: "All you need \nis stay at home.",
               offset: offset,
-            ),
-            Container(
+            ),InkWell(onTap: (){Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => InfoScreen()),
+  );},
+            child:Container(
               margin: EdgeInsets.symmetric(horizontal: 20),
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               height: 60,
@@ -59,33 +67,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Color(0xFFE5E5E5),
                 ),
               ),
-              child: Row(
-                children: <Widget>[
-                  SvgPicture.asset("assets/icons/maps-and-flags.svg"),
-                  SizedBox(width: 20),
-                  Expanded(
-                    child: DropdownButton(
-                      isExpanded: true,
-                      underline: SizedBox(),
-                      icon: SvgPicture.asset("assets/icons/dropdown.svg"),
-                      value: "Indonesia",
-                      items: [
-                        'Indonesia',
-                        'Bangladesh',
-                        'United States',
-                        'Japan'
-                      ].map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: (value) {},
-                    ),
-                  ),
-                ],
-              ),
-            ),
+              child: Center(child: Text("Symtoms and Prevention",style: TextStyle(fontSize: 20,))),
+            ),),
             SizedBox(height: 20),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
@@ -97,26 +80,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: "Case Update\n",
+                              text: "Become a Plasma Donor\n",
                               style: kTitleTextstyle,
                             ),
-                            TextSpan(
-                              text: "Newest update March 28",
-                              style: TextStyle(
-                                color: kTextLightColor,
-                              ),
-                            ),
+                            
                           ],
                         ),
                       ),
                       Spacer(),
-                      Text(
-                        "See details",
-                        style: TextStyle(
-                          color: kPrimaryColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                      
                     ],
                   ),
                   SizedBox(height: 20),
@@ -133,42 +105,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Counter(
-                          color: kInfectedColor,
-                          number: 1046,
-                          title: "Infected",
-                        ),
-                        Counter(
-                          color: kDeathColor,
-                          number: 87,
-                          title: "Deaths",
-                        ),
-                        Counter(
-                          color: kRecovercolor,
-                          number: 46,
-                          title: "Recovered",
-                        ),
-                      ],
-                    ),
+                   
                   ),
                   SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        "Spread of Virus",
+                        "Keep yourself Healthy",
                         style: kTitleTextstyle,
                       ),
-                      Text(
-                        "See details",
-                        style: TextStyle(
-                          color: kPrimaryColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                      
                     ],
                   ),
                   Container(
@@ -192,6 +139,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       fit: BoxFit.contain,
                     ),
                   ),
+                  SizedBox(height:20),
+                   InkWell(onTap: (){Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => FaqPage()),
+  );},
+                                        child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              height: 60,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(
+                  color: Color(0xFFE5E5E5),
+                ),
+              ),
+              child: Center(child: Text("FAQs",style: TextStyle(fontSize: 20,))),),
+                   ),
+              SizedBox(height:20)
+            
+           
                 ],
               ),
             ),

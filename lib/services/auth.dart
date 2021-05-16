@@ -1,6 +1,6 @@
-
 import 'package:CoWeCan/models/user.dart';
 import 'package:CoWeCan/services/database.dart';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -59,7 +59,7 @@ Future registerWithEmailAndPassword(String email,String password)async{
         UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       var user = result.user;
        //create a new document for the user with the uid
-  await DatabaseService(uid:user.uid).updateUserData('0','male','new member',100);
+  await DatabaseService(uid:user.uid).updateUserData('0','Chai','new member',100);
      return _userFromFirebaseUser(user);
     } catch (e) {
       
